@@ -213,7 +213,7 @@ The difference is the name where one is repeat and the other is while. Repeat is
 
 What's the difference between `break` and `continue`?  Give an example that demonstrates their differences.
 
-Break ends the loop at where ever it's at or up to whereas continue makes the loop stop where it is at and start from the beginning again.
+Break ends the loop at where ever it's at or up to whereas continue makes the loop stop where it is at and start from the beginning again kind of like skipping the condition you state.
 
 let puzzleInput = "great minds think alike"
 var puzzleOutput = ""
@@ -241,17 +241,14 @@ for i in 1...10 {
     print(i)
 }
 ```
+1
+2
+3
+8
+9
+10
+continue skiped all the numbers that fir the condition and just print out the other numbers.
 
-[]1
-[]2
-[]3
-[]4
-[]5
-[]6
-[]7
-[]8
-[]9
-[]10
 
 ***
 ## Question 18
@@ -266,17 +263,10 @@ for i in 1...10 {
     print(i)
 }
 ```
+1
+2
+3
 
-[]1
-[]2
-[]3
-[]4
-[]5
-[]6
-[]7
-[]8
-[]9
-[]10
 
 ***
 ## Question 19
@@ -293,17 +283,35 @@ outerloop: for x in 1...3 {
     }
 }
 ```
+x = 1, y = 1
+x = 2, y = 1
+x = 3, y = 1
 
+y stays as 1 because of the condition where it checks if y is equal to 2 so it skips it and go back to 1.
 ***
 ## Question 20
 
 Write code that prints out all the points in the area bounded by (0,0), (10,0), (0,10) and (10,10) **where** x and y are both integers.
 
+for i in 0...10{
+for j in 0...10{
+print ("\(i),\(j)", separator: "", terminator: " ")
+}
+print("")
+}
 ***
-## Question 21
+## Question 21 
 
 Write code that prints out all the points in the area bounded by (0,0), (10,0), (0,10) and (10,10) **where** the difference of x and y is at least 5, and x and y are both integers.
 
+for i in 0...10{
+for j in 0...10{
+if i - j == 5{
+print ("\(i),\(j)", separator: "", terminator: " ")
+}
+}
+print("")
+}
 ***
 ## Question 22
 
@@ -320,6 +328,13 @@ Output:
 16
 25
 ```
+var n = 5
+var i = 0
+while i <= n{
+print(i * i)
+i += 1
+
+}
 
 ***
 ## Question 23
@@ -352,3 +367,14 @@ Hint 2
 You can use print("") to print an empty line.
 
 ***
+var n = 3
+var asterix = 0
+var line = ""
+
+for _ in 0..<n{
+while asterix < n{
+line += "*"
+asterix += 1
+}
+print(line)
+}
