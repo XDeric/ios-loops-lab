@@ -13,60 +13,108 @@
 ## Question 1
 
 Write code that prints all the numbers from 1 to 150, **inclusive.**
-
+var range = 1...150
+for i in range {
+print(i)
+}
 ***
 ## Question 2
 
 Write code that prints all the numbers from 142 to 159, **exclusive.**
-
+var range = 142...159
+for i in range {
+print(i)
+}
 ***
 ## Question 3
 
 Write code that prints only the even numbers from 15 to 80, **inclusive.**
-
+var range = 15...80
+for i in range {
+if i % 2 == 0{
+print(i)
+}
+}
 ***
 ## Question 4
 
 Write code that prints only the odd numbers from 19 to 51, **inclusive.**
-
+var range = 19...51
+for i in range {
+if i % 2 != 0{
+print(i)
+}
+}
 ***
 ## Question 5
 
 Write code that prints all the numbers that end in a **5** from 1 to 100, **exclusive.**
-
-***
+var range = 1...100
+for i in range {
+if i % 10 == 5{
+print(i)
+}
+}***
 ## Question 6
 
 Write code that prints all the numbers that end in a 7 from 1 to 40, **inclusive.**
-
+var range = 1...40
+for i in range {
+if i % 10 == 7{
+print(i)
+}
+}
 ***
 ## Question 7
 
 Given a range of numbers from 20 to 150 inclusive, print out all the numbers that follows these conditions:
 
 `Numbers that are divisible by 3`
-
+var range = 20...150
+for i in range {
+if i % 3 == 0{
+print(i)
+}
+}
 ***
 ## Question 8
 
 Given a range of numbers from 20 to 150 inclusive, print out all the numbers that follows these conditions:
 
 `Numbers that are divisible by 2 and 3`
-
-***
+var range = 20...150
+for i in range {
+if i % 3 == 0 && i % 2 == 0{
+print(i)
+}
+}***
 ## Question 9
 
 Given a range of numbers from 20 to 150 inclusive, print out all the numbers that follows these conditions:
 
 `Numbers that end with a 4`
-
-***
+var range = 20...150
+for i in range {
+if i % 10 == 4{
+print(i)
+}
+}***
 ## Question 10
 
 Given a range of numbers from 20 to 150, print out all the numbers that follows these conditions:
 
 `Print out numbers: 31, 35, 40 to 60.`
+var range = 20...150
 
+for i in range{
+if i == 31 || i == 35{
+print(i)
+}
+if i <= 60 && i >= 40{
+print(i)
+}
+
+}
 ***
 ## Question 11
 
@@ -79,7 +127,7 @@ while (i > 3) {
     i += 1
 }
 
-// Your explanation here
+// It's an infinite loop because i is greater than than 3 and it will increment by 1 and will continue to do so because when it checks back at the conditional it will always be greater than 3.
 ```
 
 ***
@@ -94,6 +142,12 @@ while (i > 3) {
     i += 1
 }
 ```
+var i = 5
+
+while (i > 3 && i < 9) {
+i += 1
+print(i)
+}
 
 ***
 ## Question 13
@@ -103,11 +157,15 @@ Change the code below to make the loop stop executing after it has run 1,000 tim
 ```swift
 var i = 5
 
-while (i > 3) {
+while (i > 3 && i < 1003) {
     i += 1
 }
 ```
+var i = 5
 
+while (i > 3 && i < 1005) {
+i += 1
+}
 ***
 ## Question 14
 
@@ -120,7 +178,14 @@ while (i > 3) {
     i += 1
 }
 ```
+var i = 5
 
+while (i > 3 && i < 1005) {
+i += 1
+if i % 2 == 0{
+print(i)
+}
+}
 ***
 ## Question 15
 
@@ -142,12 +207,27 @@ repeat {
     i += 1
 } while i <= 10
 ```
-
+The difference is the name where one is repeat and the other is while. Repeat is a do while that does the repetition then it check the condition whereas while check the condition first. the output is the same even though the steps they go about it is different. 
 ***
 ## Question 16
 
 What's the difference between `break` and `continue`?  Give an example that demonstrates their differences.
 
+Break ends the loop at where ever it's at or up to whereas continue makes the loop stop where it is at and start from the beginning again.
+
+let puzzleInput = "great minds think alike"
+var puzzleOutput = ""
+let charactersToRemove: [Character] = ["a", "e", "i", "o", "u", " "]
+for character in puzzleInput {
+if charactersToRemove.contains(character) {
+continue
+}
+puzzleOutput.append(character)
+}
+print(puzzleOutput)
+// Prints "grtmndsthnklk"
+
+In this example from the reading break will give you the output gr and continue gives you grtmndsthnklk.
 ***
 ## Question 17
 
